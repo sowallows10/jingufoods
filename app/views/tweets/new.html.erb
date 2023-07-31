@@ -1,0 +1,135 @@
+<%= stylesheet_link_tag 'new', :media => "all" %>
+<div>
+  <%= image_tag 'new_photo.jpg',class:'a'%>
+
+  <header>
+  <h1>俺の球場飯！ ～神宮球場グルメ紹介～</h1>
+  </header>
+    <h3>新規球場飯投稿</h3>
+    <%= form_for @tweet do |f| %>
+      <div class="field">
+        <p><%= f.label :body %><p>
+        <%= f.text_field :body, :size => 60 %>
+
+        <P><%= f.label :shop %><p>
+        <%= f.text_field :shop, :size => 60 %>
+
+        <p><%= f.label :place %><p>
+        <%= f.select :place, 
+        [["内野", "内野"],
+        ["外野", "外野"],  
+        ["内外野", "内外野"],
+        ["球場外", "球場外"]], include_blank: "選択して下さい" %>
+
+        <p><%= f.label :food %><p>
+        <%= f.select :food, 
+        [["ラーメン", "ラーメン"], 
+        ["丼もの", "丼もの"], 
+        ["麺類その他", "麺類その他"],
+        ["カレー", "カレー"],
+        ["バーガー", "バーガー"],
+        ["ソフトドリンク", "ソフトドリンク"],
+        ["アルコール", "アルコール"],
+        ["スイーツ", "スイーツ"],
+        ["その他", "その他"]], include_blank: "選択して下さい" %>
+        
+        <p><%= f.label :price %><p>
+        <%= f.select :price, 
+        [["0～500", "0～500"], 
+        ["501～750", "501～750"], 
+        ["751～1000", "751～1000"],
+        ["1001～1250", "1001～1250"],
+        ["1251～1500", "1251～1250"],
+        ["1501～", "1501～"]], include_blank: "選択して下さい" %>
+      </div>
+      <div class="d">
+        <p><h5>総合評価</h5><p>
+        <div class="post_form">
+        <%= f.radio_button :taste, 5 ,id: 'star1'%>
+        <label for="star1"><span class="text">最高</span>★</label>
+
+        <%= f.radio_button :taste, 4 ,id: 'star2'%>
+        <label for="star2"><span class="text">良い</span>★</label>
+
+        <%= f.radio_button :taste, 3 ,id: 'star3'%>
+        <label for="star3"><span class="text">普通</span>★</label>
+
+        <%= f.radio_button :taste, 2 ,id: 'star4'%>
+        <label for="star4"><span class="text">悪い</span>★</label>
+
+        <%= f.radio_button :taste, 1 ,id: 'star5'%>
+        <label for="star5"><span class="text">最悪</span>★</label>
+      </div>
+      <div class="e">
+        <p><h5>味</h5><p>
+        <div class="post_form">
+        <%= f.radio_button :overall,  5 ,id: 'star6'%>
+        <label for="star6"><span class="text">最高</span>★</label>
+
+        <%= f.radio_button :overall,  4 ,id: 'star7'%>
+        <label for="star7"><span class="text">良い</span>★</label>
+
+        <%= f.radio_button :overall, 3 ,id: 'star8'%>
+        <label for="star8"><span class="text">普通</span>★</label>
+
+        <%= f.radio_button :overall , 2 ,id: 'star9'%>
+        <label for="star12"><span class="text">やや多い</span>★</label>
+
+        <%= f.radio_button :overall , 1 ,id: 'star10'%>
+        <label for="star10"><span class="text">最悪</span>★</label>
+      </div>
+      <div class="f">
+        <p><h5>量</h5><p>
+        <div class="post_form">
+        <%= f.radio_button :originality,  5 ,id: 'star11'%>
+        <label for="star11"><span class="text">多い</span>★</label>
+
+        <%= f.radio_button :originality,  4 ,id: 'star12'%>
+        <label for="star12"><span class="text">やや多い</span>★</label>
+
+        <%= f.radio_button :originality, 3 ,id: 'star13'%>
+        <label for="star13"><span class="text">普通</span>★</label>
+
+        <%= f.radio_button :originality , 2 ,id: 'star14'%>
+        <label for="star14"><span class="text">やや少ない</span>★</label>
+
+        <%= f.radio_button :originality , 1 ,id: 'star15'%>
+        <label for="star15"><span class="text">少ない</span>★</label>
+      </div>
+      <div class="g">
+        <p><h5>待ち時間</h5><p>
+        <div class="post_form">
+        <%= f.radio_button :wait,  5 ,id: 'star16'%>
+        <label for="star16"><span class="text">～5分</span>★</label>
+
+        <%= f.radio_button :wait,  4 ,id: 'star17'%>
+        <label for="star17"><span class="text">～10分</span>★</label>
+
+        <%= f.radio_button :wait, 3 ,id: 'star18'%>
+        <label for="star18"><span class="text">～15分</span>★</label>
+
+        <%= f.radio_button :wait , 2 ,id: 'star19'%>
+        <label for="star19"><span class="text">～25分</span>★</label>
+
+        <%= f.radio_button :wait , 1 ,id: 'star20'%>
+        <label for="star20"><span class="text">25～分</span>★</label>
+      </div> 
+
+      
+      <div class="field">
+        <%= f.label :image %>
+      <%= f.file_field :image %>
+      </div>
+      <div class="b">
+          <%= f.submit "投稿する" %>
+      </div>
+
+    <% end %>
+    
+    
+    <div class="c">
+      <%= link_to "球場飯一覧に戻る", tweets_path %>
+    </div>
+
+
+</div>

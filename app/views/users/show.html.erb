@@ -1,0 +1,57 @@
+<%= stylesheet_link_tag 'show.user', :media => "all" %>
+<div>
+  <%= image_tag 'show.user_photo.jpg',class:'x'%>  
+    <header>
+      <h1>俺の球場飯！　～神宮球場グルメ紹介～</h1>
+    </header>
+
+    
+    <br>
+    <h2>マイページ</h2>
+
+    <br>
+    <br>
+    <h3>プロフィール</h3>
+      <div class="s">
+        <p>名前 : <%= @user.name %></p>
+        <p>登録メアド : <%= @user.email %></p>
+        <p>自己紹介 : <%= @user.profile %></p>
+      </div>
+    </div>
+
+    <div class="z">
+      <% if current_user.id == @user.id %>
+        <%= link_to "編集する", edit_user_registration_path %>
+      <% end %>
+    </div>
+
+    <br>
+    <br>
+    <h3>お気に入りの球場飯</h3>
+      <div class="p">
+        <% @user.liked_tweets.each do |t| %>
+          <div class="t">
+            <p><%= image_tag t.image_url, size: "150x100" if t.image? %><p>
+            <p><%= t.user.name %><p>
+            <%= t.body %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <h3>ユーザーが味わった球場飯</h3>
+      <div class="y">
+        <% @user.tweets.each do |t| %>
+          <div class="u">
+          　<p><%= image_tag t.image_url, size: "150x100" if t.image? %><p>
+            <p><%= t.body %><p>
+          </div>
+        <% end %>
+    </div>
+
+    <div class="o">
+      <%= link_to "球場飯一覧に戻る", tweets_path %>
+    </div>

@@ -1,0 +1,57 @@
+.a{
+    text-align: center;
+    opacity: 0.38;
+    width: 100%;
+    height: 160vh;
+    font-family: serif;
+    position: absolute;
+    z-index: -1;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #f4f7f61e;
+    height: 100px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.field{
+    text-align: center;
+    margin: 50px;
+    font-weight: 650;
+}
+
+
+
+.b{
+    text-align: center;
+    font-weight: 650;
+}
+
+.c{
+    text-align: right;
+    font-weight: 500;
+}
+
+.d{
+    text-align: center;
+    margin-left: 20px;
+}
+
+input[id="tweet_body"] {
+    width: 100px;
+    height: 20px;
+}
+
+input[id="tweet_body"] {
+    width: 300px;
+    height: 20px;
+}
+
+input[id="tweet_shop"] {
+    width: 300px;
+    height: 20px;
+}

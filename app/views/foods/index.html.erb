@@ -1,0 +1,69 @@
+<%= stylesheet_link_tag 'index_foods', :media => "all" %>
+<div>
+  <%= image_tag 'index_foods_first_photo.jpg',class:'index_foods_first'%>
+    <header>
+    <h1>俺の球場飯！　～神宮球場グルメ紹介～</h1>
+    <div class="header-list3">
+        <ul>
+          <%= link_to "ログイン", tweets_path %>
+          <%= link_to "新規登録", new_user_registration_path %>
+          <%= link_to "球場飯投稿へ！", new_tweet_path %>
+          <%= link_to "球場飯一覧へ", tweets_path %>
+          <%= link_to "試合日程を確認！", schedules_path %>
+        </ul>
+    </div>
+  </header>
+
+    <br>
+    <div class="fv">
+      <h2>Concept</h2>
+    </div>
+    <div class="fr">
+      <h2>「神宮球場の隠れた魅力」を紹介！！</h2>
+    </div>
+      <div class="az">
+        <br>
+        <br>
+        <%= image_tag 'index_foods_second_photo.jpg',class:'index_foods_second'%>
+          <div class="aq">
+            <br>
+            <p>野球場の新しい魅力の発掘。<p>
+            <p>そんな想いからこのサイトを開設しました。<p>
+          </div>
+        </div>
+      </div>
+    </h2>
+      <br>
+      <div class="sw">
+        <br>
+        <br>
+        <%= image_tag 'index_foods_third_photo.jpg',class:'index_foods_third'%>
+          <div class="sx">
+            <br>
+            <p>神宮球場の新しい魅力を<p>
+            <p>あなたも味わってみませんか？<p>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="de">
+          <p>あなたのお気に入り、きっと見つかります<p>
+        </div>
+    </h2>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>検索タブ</h2>
+
+    <h3>球場飯を検索</h3>
+      <div class="abc">
+        <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+          <%= text_field_tag :search %>
+          <%= submit_tag '検索する'  %>
+          <p>※検索時、数字は半角で入力してください<p>
+        <% end %>
+      </div>

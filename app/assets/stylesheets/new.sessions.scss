@@ -1,0 +1,23 @@
+.actions {
+    text-align: center;
+}
+
+.touroku {
+    text-align: center;
+}
+
+.new_session {
+    text-align: center;
+    opacity: 0.33;
+    width: 100%;
+    height: 100vh;
+    font-family: serif;
+    position: absolute;
+    z-index: -1;
+    background-attachment: fixed;
+}
+
+input[id="user_name"] {
+    width: 170.5px;
+    height: 15px;
+}
